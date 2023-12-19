@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 17:44:13 by cleguina          #+#    #+#             */
-/*   Updated: 2023/05/19 18:21:13 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/05/23 18:46:24 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	ft_print_format(const char *str, va_list args)
 	else if (str[i] == 'x' || str[i] == 'X')
 		print_len += ft_printhex(va_arg(args, unsigned long int), str[i]);
 	else if (str[i] == '%')
-		print_len += ft_printchar ('%');
+		print_len += ft_printchar('%');
 	return (print_len);
 }
 
@@ -56,7 +56,7 @@ int	ft_printf(const char *str, ...)
 	while (str[i])
 	{
 		if (str[i] == '%')
-			count = count + ft_print_format (&str[++i], args);
+			count = count + ft_print_format(&str[++i], args);
 		else
 			count = count + write(1, &str[i], 1);
 		i++;
